@@ -1,10 +1,6 @@
 import { Schema, model } from "mongoose";
 
 import { FAVORITE_CATEGORIES } from "../config/constants.js";
-import Artist from "./artist.model.js";
-import Album from "./album.model.js";
-import Track from "./track.model.js";
-import { required } from "joi";
 
 const favoriteSchema = new Schema(
 	{
