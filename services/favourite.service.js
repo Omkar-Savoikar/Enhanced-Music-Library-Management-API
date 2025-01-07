@@ -1,7 +1,4 @@
 import Favorite from "../models/favorite.model.js";
-import Artist from "../models/artist.model.js";
-import Album from "../models/album.model.js";
-import Track from "../models/track.model.js";
 
 const getFavorites = async (userId, category, { limit = 5, offset = 0 }) => {
 	const favorites = await Favorite.find({ user_id: userId, category })
@@ -21,7 +18,7 @@ const getFavorite = async (favoriteData) => {
 
 const getFavoritebyId = async (id) => {
 	return await Favorite.findById(id);
-}
+};
 
 const addFavorite = async (user_id, category, item_id, name) => {
 	return await Favorite.create({ user_id, category, item_id, name });

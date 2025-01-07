@@ -28,6 +28,10 @@ app.use("/api/v1/tracks", trackRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/", authRouter);
 
+app.use("/", (req, res) => {
+	return res.status(200).json({ message: "Welcome to Music API" });
+});
+
 let server;
 
 app.startServer = async () => {
